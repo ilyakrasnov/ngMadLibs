@@ -1,9 +1,13 @@
 body {
-  width: 40%;
+  width: 600px;
   margin: auto;
   margin-top: 20px;
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   font-size: 20px;
+}
+
+.blank {
+  text-decoration: underline;
 }
 
 div {
@@ -13,20 +17,21 @@ div {
 
 .header {
   margin: auto;
-}
-
-.blank {
-  text-decoration: underline;
+  height: auto;
+  padding: 0;
 }
 
 .logo {
-  width: 10%;
+  width: 135px;
   float: left;
+  margin-right: 398px;
+  display:inline-block;
 }
 
 .title {
-  width: 30%;
-  float: left;
+  width: 398px;
+  float: right;
+  display:inline-block;
 }
 input[type="text"] {
     width: auto;
