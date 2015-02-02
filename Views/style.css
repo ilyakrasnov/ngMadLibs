@@ -1,0 +1,33 @@
+body {
+  width: 40%;
+  margin: auto;
+  margin-top: 20px;
+
+  font-size: 20px;
+}
+
+div {
+  border: 1px solid;
+  padding: 15px;
+}
+
+.header {
+  margin: auto;
+}
+
+.logo {
+  width: 10%;
+  float: left;
+}
+
+.title {
+  width: 30%;
+  float: left;
+}
+input[type="text"] {
+    width: auto;
+    border: 2px solid;
+    margin-bottom: 10px;
+
+}
+
