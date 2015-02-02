@@ -1,5 +1,6 @@
-var myApp = angular.module('madLibs',[]);
-
-madLibs.controller('MadCtrl', ['$scope', function($scope) {
-  $scope.femaleName = 'Female name!';
-}]);
+angular.module('madLibs',[])
+  .controller('MadCtrl', ['$scope', function($scope) {
+    $scope.inputs = {
+      femaleName:'Female name!'
+    };
+  }]);
