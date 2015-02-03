@@ -17,22 +17,23 @@
     <div ng-controller="MadCtrl">
       <div class="instructions">
         <h2>Provide the following words:</h2>
-        <input type="text" ng-model="inputs.femaleName">
-        <!-- <input type="text" ng-model="jobTitle" ng-init="jobTitle='\{\{job title\}\}'">
-        <input type="text" ng-model="tediousTask" ng-init="tediousTask='\{\{tedious task\}\}'"></p>
-        <input type="text" ng-model="dirtyTask" ng-init="dirtyTask='\{\{dirty task\}\}'">
-        <input type="text" ng-model="celebrity" ng-init="celebrity='\{\{celebrity\}\}'">
-        <input type="text" ng-model="uselessSkill" ng-init="uselessSkill='\{\{useless skill\}\}'"></p>
-        <input type="text" ng-model="adjective" ng-init="adjective='\{\{adjective\}\}'">
-        <input type="text" ng-model="obnoxiuousCelbertity" ng-init="obnoxiuousCelbertity='\{\{obnoxiuous celbertity\}\}'">
-        <input type="text" ng-model="hugeNumber" ng-init="hugeNumber='\{\{huge number\}\}'"></p> -->
+        <h3><button ng-click="gender = { 'Female': 'Male', 'Male':'Female'}[gender]">Set gender</button> {{ gender }} </h3>
+        <input type="text" ng-model="inputs.name">
+        <input type="text" ng-model="inputs.jobTitle">
+        <input type="text" ng-model="inputs.tediousTask"></p>
+        <input type="text" ng-model="inputs.dirtyTask">
+        <input type="text" ng-model="inputs.celebrity">
+        <input type="text" ng-model="inputs.uselessSkill"></p>
+        <input type="text" ng-model="inputs.adjective">
+        <input type="text" ng-model="inputs.obnoxiuousCelbertity">
+        <input type="text" ng-model="inputs.hugeNumber"></p>
       </div>
 
       <div class="text">
 
-        <span class="blank">{{ inputs.femaleName }}</span> was a <!-- <span class="blank">{{jobTitle}}</span> who loved technology. Although she loved parts of her job, she absolutely hated  <span class="blank">{{tediousTask}}</span> and <span class="blank">{{dirtyTask}}</span>. So, <span class="blank">{{femaleName}}</span> met with her life mentor <span class="blank">{{celebrity}}</span> who told her to learn how to <span class="blank">{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="blank">{{uselessSkill}}</span> so she studied programming instead.
+        <span class="blank">{{ inputs.name }}</span> was a <span class="blank">{{inputs.jobTitle}}</span> who loved technology. Although <span ng-switch on="gender"><span ng-switch-when="Female">she</span><span ng-switch-when="Male">he</span></span> loved parts of <span ng-switch on="gender"><span ng-switch-when="Female">her</span><span ng-switch-when="Male">his</span></span> job, <span ng-switch on="gender"><span ng-switch-when="Female">she</span><span ng-switch-when="Male">he</span></span> absolutely hated  <span class="blank">{{tediousTask}}</span> and <span class="blank">{{inputs.dirtyTask}}</span>. So, <span class="blank">{{inputs.name}}</span> met with <span ng-switch on="gender"><span ng-switch-when="Female">her</span><span ng-switch-when="Male">his</span></span> life mentor <span class="blank">{{inputs.celebrity}}</span> who told <span ng-switch on="gender"><span ng-switch-when="Female">her</span><span ng-switch-when="Male">him</span></span> to learn how to <span class="blank">{{inputs.uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="blank">{{inputs.uselessSkill}}</span> so <span ng-switch on="gender"><span ng-switch-when="Female">she</span><span ng-switch-when="Male">he</span></span> studied programming instead.
 
-        What a great decision! With her new skills, <span class="blank">{{femaleName}}</span> built a(n) <span class="blank">{{adjective}}</span> robot named <span class="blank">{{obnoxiuousCelbertity}}</span> that not only loved <span class="blank">{{dirtyTask}}</span> but did it <span class="blank">{{hugeNumber}}</span> faster. -->
+        What a great decision! With <span ng-switch on="gender"><span ng-switch-when="Female">her</span><span ng-switch-when="Male">his</span></span> new skills, <span class="blank">{{inputs.name}}</span> built a(n) <span class="blank">{{inputs.adjective}}</span> robot named <span class="blank">{{inputs.obnoxiuousCelbertity}}</span> that not only loved <span class="blank">{{inputs.dirtyTask}}</span> but did it <span class="blank">{{inputs.hugeNumber}}</span> faster.
       </div>
     </div>
 
