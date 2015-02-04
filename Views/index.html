@@ -21,21 +21,19 @@
 
           <h3><button ng-click="gender = { 'Female': 'Male', 'Male':'Female'}[gender]">Set gender</button> {{ gender }} </h3>
 
+          <input name="name" type="text" ng-model="inputs.name" placeholder="Name" required />
+          <input name="jobTitle" type="text" ng-model="inputs.jobTitle" placeholder= "Job Title" required />
+          <input name="tediousTask" type="text" ng-model="inputs.tediousTask" placeholder="Tedious Task" required /></p>
+          <input name="dirtyTask" type="text" ng-model="inputs.dirtyTask" placeholder="Dirty Task" required />
+          <input name="celebrity" type="text" ng-model="inputs.celebrity"  placeholder="Celebrity" required />
+          <input name="uselessSkill" type="text" ng-model="inputs.uselessSkill"  placeholder="Useless Skill" required /></p>
+          <input name="adjective" type="text" ng-model="inputs.adjective" placeholder="Adjective" required />
+          <input name="obnoxiuousCelbertity" type="text" ng-model="inputs.obnoxiuousCelbertity" placeholder="Obnoxiuous Celbertity" required />
+          <input name="hugeNumber" type="text" ng-model="inputs.hugeNumber"  placeholder="Huge Number" required /></p>
 
-          <input name="name" ng-model="inputs.name" placeholder="Name" required/>
-          <input name="jobTitle" type="text" ng-model="inputs.jobTitle" placeholder= "Job Title" required/>
-          <input name="tediousTask" type="text" ng-model="inputs.tediousTask" placeholder="Tedious Task" required/></p>
-          <input name="dirtyTask" type="text" ng-model="inputs.dirtyTask" placeholder="Dirty Task" required/>
-          <input name="celebrity" type="text" ng-model="inputs.celebrity"  placeholder="Celebrity" required/>
-          <input name="uselessSkill" type="text" ng-model="inputs.uselessSkill"  placeholder="Useless Skill" required/></p>
-          <input name="adjective" type="text" ng-model="inputs.adjective" placeholder="Adjective" required/>
-          <input name="obnoxiuousCelbertity" type="text" ng-model="inputs.obnoxiuousCelbertity" placeholder="Obnoxiuous Celbertity" required/>
-          <input name="hugeNumber" type="text" ng-model="inputs.hugeNumber"  placeholder="Huge Number" required/></p>
+          <button type="submit" value="Generate My Mad Lib" ng-disabled="ngMadForm.$invalid" ng-click="showInstructions = !showInstructions; showMadLib = !showMadLib">Generate My Mad Lib</button>
 
-          <input type="submit" value="Generate My Mad Lib" ng-click="showInstructions = !showInstructions; showMadLib = !showMadLib"/>
         </form>
-
-
       </div>
 
       <div class="text" ng-show="showMadLib">
