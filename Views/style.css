@@ -39,3 +39,8 @@ input[type="text"] {
     margin-bottom: 10px;
 
 }
+
+.error {
+  font-size: 10px;
+}
+}

@@ -22,6 +22,8 @@
           <h3><button ng-click="gender = { 'Female': 'Male', 'Male':'Female'}[gender]">Set gender</button> {{ gender }} </h3>
 
           <input name="name" type="text" ng-model="inputs.name" placeholder="Name" required />
+          <!-- <span class="error" ng-if="ngMadForm.name.$error.required">A name is required!</span> -->
+
           <input name="jobTitle" type="text" ng-model="inputs.jobTitle" placeholder= "Job Title" required />
           <input name="tediousTask" type="text" ng-model="inputs.tediousTask" placeholder="Tedious Task" required /></p>
           <input name="dirtyTask" type="text" ng-model="inputs.dirtyTask" placeholder="Dirty Task" required />
@@ -34,6 +36,7 @@
           <button type="submit" value="Generate My Mad Lib" ng-disabled="ngMadForm.$invalid" ng-click="showInstructions = !showInstructions; showMadLib = !showMadLib">Generate My Mad Lib</button>
 
         </form>
+
       </div>
 
       <div class="text" ng-show="showMadLib">
