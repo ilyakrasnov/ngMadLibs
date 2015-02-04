@@ -1,6 +1,6 @@
 angular.module('madLibs',[])
   .controller('MadCtrl', ['$scope', function($scope) {
-    $scope.inputs = {
+    $scope.initialInputs = {
       name:'Name',
       jobTitle:'Job Title',
       tediousTask:'Tedious Task',
@@ -11,6 +11,18 @@ angular.module('madLibs',[])
       obnoxiuousCelbertity:'Obnoxiuous Celbertity',
       hugeNumber:'Huge Number'
     };
+
+    $scope.inputs = $scope.initialInputs;
+
+    $scope.reset = function(){
+      $scope.inputs = $scope.initialInputs;
+    };
+
     $scope.gender = 'Female';
+
+    $scope.showInstructions = true;
+    $scope.showMadLib = false;
+
+
   }]);
 
