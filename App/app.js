@@ -1,21 +1,22 @@
 angular.module('madLibs',[])
   .controller('MadCtrl', ['$scope', function($scope) {
-    $scope.initialInputs = {
-      name:'Name',
-      jobTitle:'Job Title',
-      tediousTask:'Tedious Task',
-      dirtyTask:'Dirty Task',
-      celebrity:'Celebrity',
-      uselessSkill:'Useless Skill',
-      adjective:'Adjective',
-      obnoxiuousCelbertity:'Obnoxiuous Celbertity',
-      hugeNumber:'Huge Number'
+    $scope.inputs = {
+      name:"",
+      jobTitle:"",
+      tediousTask:"",
+      dirtyTask:"",
+      celebrity:"",
+      uselessSkill:"",
+      adjective:"",
+      obnoxiuousCelbertity:"",
+      hugeNumber:""
     };
 
-    $scope.inputs = $scope.initialInputs;
+    var initialInputs = angular.copy($scope.inputs);
 
     $scope.reset = function(){
-      $scope.inputs = $scope.initialInputs;
+      $scope.inputs = initialInputs;
+      $scope.ngMadForm.$setPristine();
     };
 
     $scope.gender = 'Female';

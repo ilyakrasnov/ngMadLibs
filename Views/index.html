@@ -17,19 +17,25 @@
     <div ng-controller="MadCtrl">
       <div class="instructions" ng-show="showInstructions">
         <h2>Provide the following words:</h2>
-        <h3><button ng-click="gender = { 'Female': 'Male', 'Male':'Female'}[gender]">Set gender</button> {{ gender }} </h3>
-        <input type="text" ng-model="inputs.name">
-        <input type="text" ng-model="inputs.jobTitle">
-        <input type="text" ng-model="inputs.tediousTask"></p>
-        <input type="text" ng-model="inputs.dirtyTask">
-        <input type="text" ng-model="inputs.celebrity">
-        <input type="text" ng-model="inputs.uselessSkill"></p>
-        <input type="text" ng-model="inputs.adjective">
-        <input type="text" ng-model="inputs.obnoxiuousCelbertity">
-        <input type="text" ng-model="inputs.hugeNumber"></p>
+        <form name="ngMadForm" novalidate>
 
-        <button ng-click="reset()">Reset</button>
-        <button ng-click="showInstructions = !showInstructions; showMadLib = !showMadLib">Generate My Mad Lib</button>
+          <h3><button ng-click="gender = { 'Female': 'Male', 'Male':'Female'}[gender]">Set gender</button> {{ gender }} </h3>
+
+
+          <input name="name" ng-model="inputs.name" placeholder="Name" required/>
+          <input name="jobTitle" type="text" ng-model="inputs.jobTitle" placeholder= "Job Title" required/>
+          <input name="tediousTask" type="text" ng-model="inputs.tediousTask" placeholder="Tedious Task" required/></p>
+          <input name="dirtyTask" type="text" ng-model="inputs.dirtyTask" placeholder="Dirty Task" required/>
+          <input name="celebrity" type="text" ng-model="inputs.celebrity"  placeholder="Celebrity" required/>
+          <input name="uselessSkill" type="text" ng-model="inputs.uselessSkill"  placeholder="Useless Skill" required/></p>
+          <input name="adjective" type="text" ng-model="inputs.adjective" placeholder="Adjective" required/>
+          <input name="obnoxiuousCelbertity" type="text" ng-model="inputs.obnoxiuousCelbertity" placeholder="Obnoxiuous Celbertity" required/>
+          <input name="hugeNumber" type="text" ng-model="inputs.hugeNumber"  placeholder="Huge Number" required/></p>
+
+          <input type="submit" value="Generate My Mad Lib" ng-click="showInstructions = !showInstructions; showMadLib = !showMadLib"/>
+        </form>
+
+
       </div>
 
       <div class="text" ng-show="showMadLib">
@@ -37,7 +43,7 @@
         <span class="blank">{{ inputs.name }}</span> was a <span class="blank">{{inputs.jobTitle}}</span> who loved technology. Although <span ng-switch on="gender"><span ng-switch-when="Female">she</span><span ng-switch-when="Male">he</span></span> loved parts of <span ng-switch on="gender"><span ng-switch-when="Female">her</span><span ng-switch-when="Male">his</span></span> job, <span ng-switch on="gender"><span ng-switch-when="Female">she</span><span ng-switch-when="Male">he</span></span> absolutely hated  <span class="blank">{{tediousTask}}</span> and <span class="blank">{{inputs.dirtyTask}}</span>. So, <span class="blank">{{inputs.name}}</span> met with <span ng-switch on="gender"><span ng-switch-when="Female">her</span><span ng-switch-when="Male">his</span></span> life mentor <span class="blank">{{inputs.celebrity}}</span> who told <span ng-switch on="gender"><span ng-switch-when="Female">her</span><span ng-switch-when="Male">him</span></span> to learn how to <span class="blank">{{inputs.uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="blank">{{inputs.uselessSkill}}</span> so <span ng-switch on="gender"><span ng-switch-when="Female">she</span><span ng-switch-when="Male">he</span></span> studied programming instead.
 
         What a great decision! With <span ng-switch on="gender"><span ng-switch-when="Female">her</span><span ng-switch-when="Male">his</span></span> new skills, <span class="blank">{{inputs.name}}</span> built a(n) <span class="blank">{{inputs.adjective}}</span> robot named <span class="blank">{{inputs.obnoxiuousCelbertity}}</span> that not only loved <span class="blank">{{inputs.dirtyTask}}</span> but did it <span class="blank">{{inputs.hugeNumber}}</span> faster.
-      <button ng-click="showInstructions = !showInstructions;showMadLib = !showMadLib;reset();">Start Over</button>
+      <button ng-click="showInstructions = !showInstructions;showMadLib = !showMadLib;reset(); reset()">Start Over</button>
       </div>
     </div>
 
